@@ -51,6 +51,28 @@ h3 {
     margin: 0rem;
   }
 
+  /* not to display on desktop*/
+
+  .mobile-navigation {
+    display: none;
+  }
+
+  .arrow-left {
+    display: none;
+  }
+
+  .arrow-right {
+    display: none;
+  }
+
+  .price-mobile {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
   .h1-title {
     line-height: 1;
     font-size: 3rem;
@@ -106,10 +128,6 @@ h3 {
     justify-content: flex-end;
     gap: 3rem;
     align-items: center;
-  }
-
-  .hamburger {
-    display: none;
   }
 
   .avatar {
@@ -185,10 +203,6 @@ h3 {
     background-color: var(--primary-color-pale-orange);
     border-radius: 0.4rem;
     margin-left: 1rem;
-  }
-
-  .price-mobile {
-    display: none;
   }
 
   .price-desktop {
@@ -282,6 +296,9 @@ h3 {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
+  /* not to display on mobile */
+
   .desktop-navigation {
     display: none;
   }
@@ -290,16 +307,80 @@ h3 {
     display: none;
   }
 
+  .price-desktop {
+    display: none;
+  }
+
+  .h1-title {
+    font-size: 1.5rem;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
 
     flex-direction: row;
-    margin: 1.8rem 1rem;
+    margin: 0.5rem 1rem;
   }
   .hamburger {
     height: 1rem;
     margin-top: 0.2rem;
+  }
+
+  .close-nav {
+    display: fixed;
+    z-index: 3;
+    margin-top: 0.8rem;
+    margin-left: 1.5rem;
+  }
+
+  .mobile-nav-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black-lightbox-background);
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  .nav-overlay-open {
+    display: block;
+  }
+
+  .mobile-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65vw;
+    height: 100vh;
+    background-color: var(--white);
+    transform: translateX(-15rem);
+    transition: transform 0.25s ease-in-out;
+  }
+
+  .mobile-navigation-open {
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .mobile-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+  .mobile-navigation li {
+    display: block;
+    padding: 0.5rem 0;
+    font-weight: 700;
   }
 
   .logo {
@@ -349,6 +430,7 @@ h3 {
 
   .h3-title {
     margin-top: 2rem;
+    font-size: 0.7rem;
   }
 
   .h1-title {
@@ -374,15 +456,15 @@ h3 {
     align-items: center;
   }
 
-  .price-desktop {
-    display: none;
-  }
-
-  .percentage-off-mobile {
+  .percentage-off {
     padding: 0.4rem 0.6rem;
     background-color: var(--primary-color-pale-orange);
     border-radius: 0.4rem;
     margin-left: 0;
+  }
+
+  .percentage-off h3 {
+    font-size: 0.8rem;
   }
 
   .price-mobile p {

@@ -27,6 +27,20 @@
     </style>
   </head>
   <body>
+    <div class="nav-overlay"></div>
+    <div class="mobile-nav-container">
+      <nav class="mobile-navigation">
+        <img class="close-nav" src="./images/icon-close.svg" alt="icon-close" />
+        <ul>
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </div>
+
     <div class="header">
       <div class="left-nav">
         <img class="hamburger" src="./images/icon-menu.svg" alt="icon-menu" />
@@ -57,9 +71,19 @@
     <div class="desktop-container">
       <div class="desktop-child product-image">
         <img
+          class="arrow-left"
+          src="./images/icon-previous.svg"
+          alt="left-arrow"
+        />
+        <img
           class="main-image"
           src="./images/image-product-1.jpg"
           alt="image-product-1"
+        />
+        <img
+          class="arrow-right"
+          src="./images/icon-next.svg"
+          alt="right-arrow"
         />
         <div class="small-images-container">
           <div class="small-images">
@@ -131,5 +155,6 @@
       >. Coded by
       <p>Tom Chamberlin</p>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
