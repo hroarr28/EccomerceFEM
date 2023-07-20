@@ -466,8 +466,8 @@ h3 {
 
   .cart-display-open {
     display: flex;
+    flex-direction: column;
     position: absolute;
-
     top: 0;
     left: 0;
     width: 90vw;
@@ -492,6 +492,29 @@ h3 {
     margin: 4rem 0;
     z-index: 3;
     width: 90vw;
+  }
+
+  /* cart display with items added */
+
+  /* .cart-items-container {
+    
+  } */
+
+  .item-image {
+    width: 4rem !important;
+    height: 4rem !important;
+    border-radius: 0.6rem;
+    flex: 1;
+  }
+
+  .item-delete {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  .right-container {
+    display: flex;
+    flex-direction: column !important;
   }
 
   /* image carousel */

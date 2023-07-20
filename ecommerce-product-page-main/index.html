@@ -112,7 +112,22 @@
         <div class="cart-display">
           <h4>Cart</h4>
           <div class="cart-display-line"></div>
-          <p class="empty-text">Your cart is empty.</p>
+
+          <p class="empty-text" style="display: none">Your cart is empty.</p>
+          <div class="cart-items-container">
+            <img class="item-image" />
+            <div class="right-container">
+              <div class="cart-title">
+                <p class="item-name"></p>
+              </div>
+              <div class="cart-price-and-quantity">
+                <p class="item-price"></p>
+                <p class="item-quantity"></p>
+                <p class="item-total"></p>
+              </div>
+            </div>
+            <img class="item-delete" />
+          </div>
         </div>
         <div class="small-images-container">
           <div class="small-images">
@@ -163,9 +178,17 @@
         </div>
         <div class="buttons-container">
           <div class="plus-and-minus">
-            <img src="./images/icon-minus.svg" alt="icon-minus" />
-            <p>0</p>
-            <img src="./images/icon-plus.svg" alt="icon-plus" />
+            <img
+              class="minus-button"
+              src="./images/icon-minus.svg"
+              alt="icon-minus"
+            />
+            <p class="quantity">0</p>
+            <img
+              class="plus-button"
+              src="./images/icon-plus.svg"
+              alt="icon-plus"
+            />
           </div>
           <div class="cart-container">
             <button class="add-to-cart-button">
