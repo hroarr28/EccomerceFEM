@@ -44,6 +44,8 @@ h3 {
   color: var(--primary-color-orange);
 }
 
+/* Desktop */
+
 @media screen and (min-width: 377px) {
   h1,
   h3,
@@ -72,6 +74,14 @@ h3 {
   .hamburger {
     display: none;
   }
+
+  #image-2,
+  #image-3,
+  #image-4 {
+    display: none;
+  }
+
+  /**/
 
   .h1-title {
     line-height: 1;
@@ -285,6 +295,8 @@ h3 {
   }
 }
 
+/* Mobile */
+
 @media screen and (max-width: 376px) {
   h1,
   h2,
@@ -348,7 +360,7 @@ h3 {
     height: 100vh;
     background-color: var(--black-lightbox-background);
     opacity: 0.5;
-    z-index: 0;
+    z-index: 1;
   }
 
   .nav-overlay-open {
@@ -416,8 +428,52 @@ h3 {
     display: block;
   }
 
-  .product-image {
+  /* image carousel */
+
+  .image-carousel-container {
     display: flex;
+    width: 100vw;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    margin-top: 1rem;
+  }
+
+  .main-image {
+    position: relative;
+    margin: 0;
+    width: 100vw;
+    height: 60vh;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .arrow-left {
+    position: absolute;
+    top: 7rem;
+    left: 0.5rem;
+    z-index: 2;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border-radius: 50%;
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+  }
+
+  .arrow-right {
+    position: absolute;
+    top: 7rem;
+    right: 0.5rem;
+    z-index: 2;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border-radius: 50%;
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+  }
+
+  .product-image {
+    position: relative;
     width: 100%;
   }
 
@@ -426,7 +482,10 @@ h3 {
     height: 45vh;
     margin: 0;
     object-fit: cover;
+    z-index: 0;
   }
+
+  /**/
 
   .h3-title {
     margin-top: 2rem;

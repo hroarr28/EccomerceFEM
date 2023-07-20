@@ -12,3 +12,11 @@ navClose.addEventListener("click", () => {
   navMenu.classList.remove("mobile-navigation-open");
   navOverlay.classList.remove("nav-overlay-open");
 });
+
+function goLeft() {
+  document.querySelector(".image-carousel-container").scrollLeft -= 250;
+}
+
+function goRight() {
+  document.querySelector(".image-carousel-container").scrollLeft += 250;
+}
