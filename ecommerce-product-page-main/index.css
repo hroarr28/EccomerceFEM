@@ -18,6 +18,7 @@ html {
 h1,
 h2,
 h3,
+h4,
 p,
 li,
 ul {
@@ -298,6 +299,15 @@ h3 {
 /* Mobile */
 
 @media screen and (max-width: 376px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
   h1,
   h2,
   h3,
@@ -310,6 +320,8 @@ h3 {
   }
 
   /* not to display on mobile */
+
+  /* nav bar */
 
   .desktop-navigation {
     display: none;
@@ -428,6 +440,60 @@ h3 {
     display: block;
   }
 
+  /**/
+
+  /* cart display */
+
+  .cart-display {
+    display: none;
+  }
+
+  .cart-display h4 {
+    margin-left: 1.5rem;
+  }
+
+  .empty-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    margin-top: 4rem;
+  }
+
+  .cart-display-line {
+    display: none;
+  }
+
+  .cart-display-open {
+    display: flex;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 90vw;
+    height: 38vh;
+    margin: 0.5rem;
+    margin-right: 2rem;
+    border-radius: 0.6rem;
+    background-color: var(--white);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+
+  .cart-display-open h4 {
+    margin-left: 1.5rem;
+  }
+
+  .cart-display-line-open {
+    display: flex;
+    position: absolute;
+    height: 0.1rem;
+    background-color: var(--light-grayish-blue);
+    margin: 4rem 0;
+    z-index: 3;
+    width: 90vw;
+  }
+
   /* image carousel */
 
   .image-carousel-container {
@@ -513,6 +579,7 @@ h3 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 1rem;
   }
 
   .percentage-off {
