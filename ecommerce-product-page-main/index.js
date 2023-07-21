@@ -121,7 +121,33 @@ addToCartButton.addEventListener("click", () => {
   headerQuantity.textContent = totalQuantity;
 });
 
-console.log(cartItems);
+// cart delete function
+
+const cartDelete = document.querySelector(".item-delete");
+const headerQuantity = document.querySelector(".header-quantity");
+
+cartDelete.addEventListener("click", () => {
+  const cartItemIndex = cartItems.findIndex((item) => item.id === 1);
+  if (cartItemIndex > -1) {
+    cartItems.splice(cartItemIndex, 1);
+  }
+
+  // Calculate the total quantity after deleting the item
+  let totalQuantity = 0;
+  cartItems.forEach((item) => {
+    totalQuantity += parseInt(item.quantity.replace("x", ""));
+  });
+
+  // Update the header quantity with the new total
+  headerQuantity.textContent = totalQuantity;
+
+  // Hide the cart display if there are no items left
+  if (cartItems.length === 0) {
+    cartItemsContainer.style.display = "none";
+    checkoutButton.style.display = "none";
+    headerQuantity.style.display = "none";
+  }
+});
 
 // plus and minus function
 
@@ -136,19 +162,5 @@ plusButton.addEventListener("click", () => {
 minusButton.addEventListener("click", () => {
   if (quantity.innerHTML > 1) {
     quantity.innerHTML--;
-  }
-});
-
-// cart delete function
-
-const cartDelete = document.querySelector(".item-delete");
-
-cartDelete.addEventListener("click", () => {
-  cartItemsContainer.style.display = "none";
-  checkoutButton.style.display = "none";
-  headerQuantity.style.display = "none";
-  const cartItemIndex = cartItems.findIndex((item) => item.id === 1);
-  if (cartItemIndex > -1) {
-    cartItems.splice(cartItemIndex, 1);
   }
 });
