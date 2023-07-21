@@ -29,6 +29,9 @@ function goRight() {
 
 const cartItems = [];
 
+const checkoutButton = document.querySelector(".checkout-button");
+const cartItemsContainer = document.querySelector(".cart-items-container");
+const cartItem = document.querySelector(".cart-item");
 const emptyText = document.querySelector(".empty-text");
 const cartDisplay = document.querySelector(".cart-display");
 const cartDisplayLine = document.querySelector(".cart-display-line");
@@ -44,8 +47,13 @@ const itemDelete = document.querySelector(".item-delete");
 cartIcon.addEventListener("click", () => {
   if (cartItems.length === 0) {
     emptyText.style.display = "flex";
+    cartItemsContainer.style.display = "none";
+    checkoutButton.style.display = "none";
   } else {
     emptyText.style.display = "none";
+    cartItemsContainer.style.display = "flex";
+    checkoutButton.style.display = "flex";
+
     const cartItemsList = document.querySelector(".cart-items-container");
     // cartItemsList.innerHTML = "";
 
@@ -63,13 +71,13 @@ cartIcon.addEventListener("click", () => {
 
       itemDelete.src = "images/icon-delete.svg";
 
-      cartItemsList.appendChild(itemImage);
-      cartItemsList.appendChild(itemName);
+      //   cartItemsList.appendChild(itemImage);
+      //   cartItemsList.appendChild(itemName);
 
-      cartItemsList.appendChild(itemPrice);
-      cartItemsList.appendChild(itemQuantity);
-      cartItemsList.appendChild(itemTotal);
-      cartItemsList.appendChild(itemDelete);
+      //   cartItemsList.appendChild(itemPrice);
+      //   cartItemsList.appendChild(itemQuantity);
+      //   cartItemsList.appendChild(itemTotal);
+      //   cartItemsList.appendChild(itemDelete);
     });
   }
   cartDisplay.classList.toggle("cart-display-open");
@@ -81,15 +89,16 @@ cartIcon.addEventListener("click", () => {
 function calculateTotal() {
   let total = 0;
   cartItems.forEach((item) => {
-    total += item.price.value * Number(quantity.innerHTML);
+    total += item.price.value * String(item.quantity).replace("x", "");
   });
   return "$" + total;
 }
 
 const addToCartButton = document.querySelector(".add-to-cart-button");
-
+const quantityTally = 0;
 addToCartButton.addEventListener("click", () => {
   cartItems.push({
+    id: 1,
     image: (src = "images/image-product-1.jpg"),
     name: "Fall Limited Edition Sneakers",
     price: {
@@ -98,6 +107,18 @@ addToCartButton.addEventListener("click", () => {
     },
     quantity: "x" + quantity.innerHTML,
   });
+  quantity.innerHTML = 0;
+
+  // quantity on cart display
+
+  const headerQuantity = document.querySelector(".header-quantity");
+
+  let totalQuantity = 0;
+  cartItems.forEach((item) => {
+    totalQuantity = String(item.quantity);
+    totalQuantity = totalQuantity.replace("x", "");
+  });
+  headerQuantity.textContent = totalQuantity;
 });
 
 console.log(cartItems);
@@ -115,5 +136,19 @@ plusButton.addEventListener("click", () => {
 minusButton.addEventListener("click", () => {
   if (quantity.innerHTML > 1) {
     quantity.innerHTML--;
+  }
+});
+
+// cart delete function
+
+const cartDelete = document.querySelector(".item-delete");
+
+cartDelete.addEventListener("click", () => {
+  cartItemsContainer.style.display = "none";
+  checkoutButton.style.display = "none";
+  headerQuantity.style.display = "none";
+  const cartItemIndex = cartItems.findIndex((item) => item.id === 1);
+  if (cartItemIndex > -1) {
+    cartItems.splice(cartItemIndex, 1);
   }
 });

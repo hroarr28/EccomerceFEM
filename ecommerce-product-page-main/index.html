@@ -60,6 +60,7 @@
       </div>
       <div class="right-nav">
         <img class="cart" src="./images/icon-cart.svg" alt="cart" />
+        <p class="header-quantity"></p>
         <img
           class="avatar"
           src="./images/image-avatar.png"
@@ -109,24 +110,36 @@
           alt="right-arrow"
           onclick="goRight()"
         />
-        <div class="cart-display">
-          <h4>Cart</h4>
-          <div class="cart-display-line"></div>
+        <div class="cart-display-container">
+          <div class="cart-display">
+            <h4>Cart</h4>
+            <div class="cart-display-line"></div>
+            <p class="empty-text" style="display: none">Your cart is empty.</p>
+            <div class="cart-items-container">
+              <div class="cart-item">
+                <div class="left-container">
+                  <img class="item-image" />
+                </div>
 
-          <p class="empty-text" style="display: none">Your cart is empty.</p>
-          <div class="cart-items-container">
-            <img class="item-image" />
-            <div class="right-container">
-              <div class="cart-title">
-                <p class="item-name"></p>
-              </div>
-              <div class="cart-price-and-quantity">
-                <p class="item-price"></p>
-                <p class="item-quantity"></p>
-                <p class="item-total"></p>
+                <div class="right-container">
+                  <div class="shoe-title">
+                    <p class="item-name"></p>
+                  </div>
+                  <div class="cart-price-and-quantity">
+                    <p class="item-price"></p>
+                    <p class="item-quantity"></p>
+                    <p class="item-total"></p>
+                  </div>
+                </div>
+
+                <div class="delete-container">
+                  <img class="item-delete" />
+                </div>
               </div>
             </div>
-            <img class="item-delete" />
+            <div class="checkout-container">
+              <button class="checkout-button">Checkout</button>
+            </div>
           </div>
         </div>
         <div class="small-images-container">
