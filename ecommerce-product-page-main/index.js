@@ -164,3 +164,52 @@ minusButton.addEventListener("click", () => {
     quantity.innerHTML--;
   }
 });
+
+// small images click function 
+
+const smallImage1 = document.querySelector(".small-image-1");
+const smallImage2 = document.querySelector(".small-image-2");
+const smallImage3 = document.querySelector(".small-image-3");
+const smallImage4 = document.querySelector(".small-image-4");
+
+const mainImage = document.querySelector(".main-image");
+
+smallImage1.addEventListener("click", () => {
+  mainImage.src = "images/image-product-1.jpg";
+  smallImage1.classList.add("small-images-clicked");
+  smallImage2.classList.remove("small-images-clicked");
+  smallImage3.classList.remove("small-images-clicked");
+  smallImage4.classList.remove("small-images-clicked");
+}
+);
+
+smallImage2.addEventListener("click", () => {
+  mainImage.src = "images/image-product-2.jpg";
+  smallImage2.classList.add("small-images-clicked");
+  smallImage1.classList.remove("small-images-clicked");
+  smallImage3.classList.remove("small-images-clicked");
+  smallImage4.classList.remove("small-images-clicked");
+}
+);
+
+smallImage3.addEventListener("click", () => {
+  mainImage.src = "images/image-product-3.jpg";
+  smallImage3.classList.add("small-images-clicked");
+  smallImage1.classList.remove("small-images-clicked");
+  smallImage2.classList.remove("small-images-clicked");
+  smallImage4.classList.remove("small-images-clicked");
+}
+);
+
+smallImage4.addEventListener("click", () => {
+  mainImage.src = "images/image-product-4.jpg";
+  smallImage4.classList.add("small-images-clicked");
+  smallImage1.classList.remove("small-images-clicked");
+  smallImage2.classList.remove("small-images-clicked");
+  smallImage3.classList.remove("small-images-clicked");
+}
+);
+
+
+
+

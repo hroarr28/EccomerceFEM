@@ -295,9 +295,23 @@ h3 {
     width: 25rem;
   }
 
+  .small-images-clicked {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  }
+
   .small-images img {
     width: 5rem !important;
     border-radius: 1rem;
+  }
+
+  .small-images-clicked {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem;
+    border: var(--primary-color-orange) solid 0.2rem;
+    color: var(--grayish-blue) opacity 0.5;
   }
 
   .header-quantity {
@@ -333,6 +347,7 @@ h3 {
 
   body {
     position: relative;
+    overflow-x: hidden;
   }
 
   h1,
